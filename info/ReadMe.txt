@@ -6,3 +6,4 @@ Deploy и Undeploy Приложения: mvn tomcat7:undeploy && mvn clean packa
 Проверка Стилей: mvn checkstyle:check
 Коллекция (Postman) для API: TheHotelAdministratorAPI.postman_collection.json
 Логи Приложения: ~/ApacheTomcat-11.0.5/apache-tomcat-11.0.5/bin/the_hotel_administrator_logs Файл: application.log
+Скрипт для Создания Базы Данных: info/setup_hotel_system.sh
