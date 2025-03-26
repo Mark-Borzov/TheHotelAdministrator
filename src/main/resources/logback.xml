@@ -1,0 +1,29 @@
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>the_hotel_administrator_logs/application.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Уровни Логирования: TRACE DEBUG INFO WARN ERROR FATAL -->
+
+    <!-- Логгер для Пакета Hibernate: -->
+    <logger name="org.hibernate" level="WARN" />
+
+    <!-- Логгер для SQL-запросов, Генерируемых Hibernate: -->
+    <logger name="org.hibernate.SQL" level="WARN">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <!-- Логгер для управления транзакциями Spring: -->
+    <logger name="org.springframework.transaction" level="WARN">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <!-- Корневой Логгер: -->
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

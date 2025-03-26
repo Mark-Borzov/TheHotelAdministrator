@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "00745fce-90eb-4a37-85bd-4c30d3bf723c",
+		"name": "TheHotelAdministratorAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39818864"
+	},
+	"item": [
+		{
+			"name": "Действия для Гостиницы",
+			"item": [
+				{
+					"name": "1) Создать Гостиницу",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hotelName\": \"Гостиница\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2) Получить Название Гостиницы",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/hotel/hotel-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"hotel",
+								"hotel-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3) Изменить Название Гостиницы",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hotelName\": \"Гостиница-Новая\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4) Получить Информацию о Гостинице",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Действия для Номеров Гостиницы",
+			"item": [
+				{
+					"name": "1) Получить Общее Количество Номеров в Гостинице",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/rooms-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"rooms-count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2) Получить Общее число Свободных Номеров в Гостинице",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/available-rooms-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"available-rooms-count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3) Получить Описание всех Номеров Гостиницы",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4) Создать и Автоматически Добавить Номер в Гостиницу",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomType\": \"STUDIO\",\n    \"roomNumber\": 4,\n    \"roomPrice\": 2530.00,\n    \"maxCapacity\": 2,\n    \"countOfStars\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5) Изменить Цену Номера (по номеру размещения)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/changing-number?roomNumber=1&newPrice=3650",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"changing-number"
+							],
+							"query": [
+								{
+									"key": "roomNumber",
+									"value": "1"
+								},
+								{
+									"key": "newPrice",
+									"value": "3650"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6) Получить Список всех Номеров (отсортированных по Цене)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/sorted?sortBy=Цена",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Цена"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7) Получить Список всех Номеров (отсортированных по Вместимости)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/sorted?sortBy=Вместимость",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Вместимость"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8) Получить Список всех Номеров (отсортированных по Количеству Звезд)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/sorted?sortBy=Звезды",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Звезды"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9) Получить Список всех Свободных Номеров (отсортированных по Цене)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/available-sorted?sortBy=Цена",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"available-sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Цена"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10) Получить Список всех Свободных Номеров (отсортированных по Вместимости)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/available-sorted?sortBy=Вместимость",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"available-sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Вместимость"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11) Получить Список всех Свободных Номеров (отсортированных по Количеству Звезд)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/available-sorted?sortBy=Звезды",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"available-sorted"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Звезды"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12) Получить Список Номеров, которые будут Доступны по Определенной Дате",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/release-date?date=2025-03-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"release-date"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-03-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13) Посмотреть Последних Жителей Номера и Даты их Пребывания (по номеру Размещения)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/room-history?roomNumber=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"room-history"
+							],
+							"query": [
+								{
+									"key": "roomNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14) Изменить Статус Номера на \"На Ремонте\"",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/for-repair?roomNumber=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"for-repair"
+							],
+							"query": [
+								{
+									"key": "roomNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15) Изменить Статус Номера с \"На Ремонте\" на \"Не Заселен",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/room/not-inhabited?roomNumber=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"room",
+								"not-inhabited"
+							],
+							"query": [
+								{
+									"key": "roomNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Действия для Жителей Гостиницы",
+			"item": [
+				{
+					"name": "1) Заселить Жителя в Номер (по номеру Размещения)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tenantName\": \"Марк Борзов\",\n    \"tenantINN\": \"123456789012\",\n    \"roomNumber\": 1,\n    \"checkInDate\": \"2025-03-25\",\n    \"dateOfIssueOfTheRoom\": \"2025-03-30\"\n}\n\n// {\n//     \"tenantName\": \"Максим Филькин\",\n//     \"tenantINN\": \"823346789062\",\n//     \"roomNumber\": 1,\n//     \"checkInDate\": \"2025-03-25\",\n//     \"dateOfIssueOfTheRoom\": \"2025-03-30\"\n// }\n\n// (Не Геи)",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2) Выселить Жителя из Номера (по ИНН)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant?roomNumber=1&tenantINN=123456789012",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant"
+							],
+							"query": [
+								{
+									"key": "roomNumber",
+									"value": "1"
+								},
+								{
+									"key": "tenantINN",
+									"value": "123456789012"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3) Получить Список всех Жителей и их Номеров (отсортированных по Алфавиту)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant/sorting?sortBy=Алфавит",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant",
+								"sorting"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Алфавит"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4) Получить Список всех Жителей и их Номеров (отсортированных по Дате Освобождения)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant/sorting?sortBy=Освобождение",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant",
+								"sorting"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "Освобождение"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5) Получить Общее число Жителей Гостиницы",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant/total-tenants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant",
+								"total-tenants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6) Посмотреть Оплату Жильца за Номер",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/tenant/final-payment?tenantINN=123456789012",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"tenant",
+								"final-payment"
+							],
+							"query": [
+								{
+									"key": "tenantINN",
+									"value": "123456789012"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Действия для Услуг Жителей Гостиницы",
+			"item": [
+				{
+					"name": "1) Добавить Услугу для Жителя",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serviceName\": \"Завтрак\",\n    \"serviceDate\": \"2025-03-25\",\n    \"tenantINN\": \"123456789012\",\n    \"roomNumber\": 1\n}\n\n// {\n//     \"serviceName\": \"Обед\",\n//     \"serviceDate\": \"2025-03-25\",\n//     \"tenantINN\": \"123456789012\",\n//     \"roomNumber\": 1\n// }\n\n// {\n//     \"serviceName\": \"Ужин\",\n//     \"serviceDate\": \"2025-03-25\",\n//     \"tenantINN\": \"123456789012\",\n//     \"roomNumber\": 1\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2) Посмотреть Список всех Предоставляемых Услуг в Гостинице (отсортированных по Цене)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/service/services-provided",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"service",
+								"services-provided"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3) Посмотреть Список Услуг Жителя (Отсортированных по Цене)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/service/sorted?tenantINN=123456789012&sortBy=Цена",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"service",
+								"sorted"
+							],
+							"query": [
+								{
+									"key": "tenantINN",
+									"value": "123456789012"
+								},
+								{
+									"key": "sortBy",
+									"value": "Цена"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4) Посмотреть Список Услуг Жителя (Отсортированных по Дате Добавления)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TheHotelAdministrator/service/sorted?tenantINN=123456789012&sortBy=Дата",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TheHotelAdministrator",
+								"service",
+								"sorted"
+							],
+							"query": [
+								{
+									"key": "tenantINN",
+									"value": "123456789012"
+								},
+								{
+									"key": "sortBy",
+									"value": "Дата"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
