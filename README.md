@@ -16,7 +16,7 @@
 ## Функциональные Возможности
 
 Запросы к API и их описания можно найти в файле: `/info/TheHotelAdministratorAPI.postman_collection.json`. Данный файл содержит все необходимые эндпоинты и параметры для взаимодействия с приложением.
-Логи приложения находятся в файле по следующему пути: `/[apache-tomcat]/bin/the_hotel_administrator_logs/application.log`
+Логи приложения находятся в файле по следующему пути: `/logs/application.log`
 
 ## Установка и Запуск
 - Клонировать репозиторий: `git@github.com:Mark-Borzov/TheHotelAdministrator.git`
